@@ -4,7 +4,6 @@ import Footer from './layouts/Footer.vue'
 import Title from './components/Title.vue'
 import BoxProject from './components/BoxProject.vue'
 import BoxExperience from './components/BoxExperience.vue'
-import Typed from 'typed.js'
 import { onMounted, ref } from 'vue';
 
 const experienceFrontend = [
