@@ -1,10 +1,10 @@
 <script setup>
-defineProps(['name', 'images', 'source', 'demo'])
+defineProps(['name', 'image', 'source', 'demo'])
 </script>
 <template>
     <div class="rounded-3xl bg-gray-100 p-8 border">
         <div class="overflow-hidden h-[300px] rounded-3xl mx-auto">
-            <img :src="images" class="object-cover w-full h-full rounded-4xl"/>
+            <img :src="image" class="object-cover w-full h-full rounded-4xl"/>
         </div>
         <h1 class="text-2xl font-bold mt-4 text-gray-700 text-center">{{ name }}</h1>
         <div class="mt-4 flex justify-center gap-5">

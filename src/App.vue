@@ -14,6 +14,27 @@ const experienceBackend = [
   'PHP', 'Laravel', 'ExpressJS', 'MySQL', 'MongoDB', 'GIT'
 ]
 
+const projectItem = [
+
+  {
+    name: 'Shoes Shop',
+    image: '/images/shoesshop.jpg',
+    source: 'https://github.com/tuananht21/shoesshop',
+  },
+  {
+    name: 'Robot Store',
+    image: '/images/robotstore.jpg',
+    source: 'https://github.com/tuananht21/robot-store',
+  },
+  {
+    name: 'Chat A.I App',
+    image: '/images/chatai.png',
+    source: 'https://github.com/tuananht21/chat-ai-v1',
+    demo: 'https://chat-ai-v1-rho.vercel.app',
+  },
+  
+];
+
 const handleSubmit = () => {
   alert('Làm để đó :)))');
 }
@@ -38,12 +59,20 @@ AOS.init({
   duration: 800,
 });
 
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import 'swiper/css';
+import { Autoplay } from 'swiper/modules';
+
 </script>
 
 <template>
+
   <Header />
+
     <div class="container mx-auto px-4">
+
       <section class="py-20">
+
         <div class="py-20 grid md:grid-cols-2 max-w-[800px] mx-auto items-center justify-center gap-y-10">
           <div class="overflow-hidden h-[300px] w-[300px] rounded-[50%]">
             <img src="/images/avatar.jpg" class="object-cover w-full h-full">
@@ -53,6 +82,7 @@ AOS.init({
             <div class="text-4xl">
               <h1 class="font-bold inline-block" ref="nameElement"></h1>
             </div>
+
             <h3 class="text-2xl text-gray-800 font-bold opacity-75">Backend Developer</h3>
             <div class="flex space-x-4 mt-4 justify-center">
               <button
@@ -69,6 +99,7 @@ AOS.init({
                 Contact Info
               </a>
               </button>
+
             </div>
             <div class="flex gap-2 justify-center">
               <a href="https://github.com/breathe21" class="text-3xl">
@@ -84,6 +115,7 @@ AOS.init({
 
       <!-- About Me -->
       <section id="about" class="py-20">
+
       <Title :title="'About Me'" />
       <div class="py-20 grid md:grid-cols-2 items-center gap-10">
         <div class="overflow-hidden md:h-[350px] md:w-[350px] lg:h-[400px] lg:w-[400px] rounded-3xl mx-auto"
@@ -104,7 +136,6 @@ AOS.init({
               <p class="text-sm text-gray-500">1+ years</p>
               <p class="text-sm text-gray-500">Backend / Fullstack Projects</p>
             </div>
-
           </div>
           <p class="mt-6 text-gray-600 leading-7">
             I'm a 3rd-year Information Technology student focusing on becoming a Backend Developer.
@@ -125,12 +156,32 @@ AOS.init({
       </div>
     </section>
 
+    <section id="projects" class="py-20" data-aos="fade-up">
+
+      <Title title="Projects" class="mb-10" />
+
+      <div>
+         <Swiper :modules="[Autoplay]" :slides-per-view="1" :space-between="30" :loop="true" :autoplay="{
+          delay: 2500,
+          disableOnInteraction: false
+        }" :breakpoints="{
+          640: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 }
+        }">
+          <SwiperSlide v-for="(item, index) in projectItem" :key="index">
+            <BoxProject :name="item.name" :image="item.image" :source="item.source" :demo="item.demo" />
+          </SwiperSlide>
+        </Swiper>
+      </div>
+
+    </section>
+
     <!-- Contact -->
     <section class="py-20" id="contact" data-aos="fade-up">
       <Title :title="'Contact Me'" />
       <div class="flex gap-2 bg-gray-100 p-5 rounded-4xl w-fit text-center mx-auto mt-10">
         <i class="fa-solid fa-envelope text-2xl"></i>
-        <p>trghoangtuananh21@gmail.com</p>
+        <p>tuananhcepdn@gmail.com</p>
       </div>
 
       <form @submit.prevent="handleSubmit"
