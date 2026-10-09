@@ -89,7 +89,7 @@ import { Autoplay } from 'swiper/modules';
                 class="text-md font-bold border rounded-4xl px-4 py-3 hover:bg-gray-700 hover:text-white 
                 cursor-pointer hover:transition hover:duration-300 hover:ease-in-out"
               >
-              <a href="" target="_blank">
+              <a href="/pdfs/cv.pdf" target="_blank">
                 Download CV
               </a>
               </button>
